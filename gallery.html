@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>みゅのへや ★ GALLERY</title>
+<style>
+  * { box-sizing: border-box; border-radius: 0 !important; }
+  body {
+    margin: 0; padding: 16px 8px 32px;
+    background-color: #1d1738;
+    background-image:
+      radial-gradient(1px 1px at 20px 30px, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 130px 80px, #ffffff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 70px 140px, #f7a8b8 50%, transparent 51%),
+      radial-gradient(1px 1px at 190px 170px, #ffffff 50%, transparent 51%);
+    background-size: 220px 220px;
+    color: #332b4a;
+    font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 15px; line-height: 1.7;
+  }
+  a { color: #7a4fd0; }
+  a:visited { color: #a07cc9; }
+  a:hover { color: #d9a441; }
+  .room {
+    max-width: 920px; margin: 0 auto;
+    background: #fffaf0;
+    border: 3px double #d9a441;
+    outline: 1px solid #7a4fd0;
+  }
+  header {
+    text-align: center; padding: 22px 12px 10px;
+    border-bottom: 2px dotted #7a4fd0;
+    background: linear-gradient(#2a2150, #1d1738);
+    color: #fffaf0;
+  }
+  header.hero { padding: 0; position: relative; background: none; }
+  header.hero img { width: 100%; height: auto; display: block; }
+  .hero-title {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 0 8px;
+    text-shadow: 0 2px 10px rgba(10,5,30,.95), 0 0 3px rgba(10,5,30,.95);
+  }
+  header .stars { color: #d9a441; letter-spacing: 4px; font-size: 13px; }
+  header h1 { margin: 4px 0 2px; font-size: 26px; letter-spacing: 2px; }
+  header h1 .gold { color: #ffe9a8; }
+  header .sub { margin: 0; font-size: 13px; color: #cfc4ee; }
+  main { padding: 14px 18px 20px; }
+  h2 {
+    font-size: 17px; margin: 0 0 6px; padding: 3px 10px;
+    background: #2a2150; color: #ffe9a8; letter-spacing: 1px;
+  }
+  .note { font-size: 13px; color: #6b6285; margin: 6px 0 12px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  figure {
+    margin: 0; border: 1px solid #c9b8ef; background: #fff; padding: 6px;
+  }
+  figure img { width: 100%; height: auto; display: block; cursor: pointer; }
+  figcaption { font-size: 12.5px; line-height: 1.5; padding: 6px 2px 2px; color: #4a4066; }
+  figcaption .no { color: #d9a441; font-weight: bold; }
+  .back { text-align: center; margin-top: 18px; font-size: 14px; }
+  footer {
+    text-align: center; font-size: 12px; color: #6b6285;
+    border-top: 2px dotted #7a4fd0; padding: 10px 8px 14px; background: #fdf6ff;
+  }
+  /* 大きく見る窓（試作用の簡易ライトボックス） */
+  .lightbox {
+    display: none; position: fixed; inset: 0; z-index: 10;
+    background: rgba(20, 14, 45, 0.92);
+    align-items: center; justify-content: center; flex-direction: column;
+    padding: 16px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: min(92vw, 640px); max-height: 76vh; border: 3px double #d9a441; background:#fff; }
+  .lightbox p { color: #fffaf0; font-size: 14px; text-align: center; max-width: 640px; }
+  .lightbox .close { color: #ffe9a8; font-size: 13px; }
+  @media (max-width: 640px) {
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    main { padding: 12px; }
+    header h1 { font-size: 21px; }
+  }
+</style>
+</head>
+<body>
+<div class="room">
+
+  <header class="hero">
+    <img src="header.jpg" alt="夜の窓辺で毛布にくるまって眠る、白い子猫のみゅ">
+    <div class="hero-title">
+      <div class="stars">★ ☆ ★ ☆ ★</div>
+      <h1>GALLERY <span class="gold">― みゅの絵 ―</span></h1>
+      <p class="sub">絵をクリックすると大きく見れるみゅ</p>
+    </div>
+  </header>
+
+  <main>
+    <h2>みゅ画像ガチャの絵（全8種）</h2>
+    <p class="note">まずは試作として、公開済みのガチャの絵をそのまま置いたよ。絵そのものは加工してない、そのままみゅ。</p>
+    <p class="note">★ この絵たちはガチャでも回せるみゅ → <a href="https://myu-mew.github.io/gacha-v2/" target="_blank" rel="noopener">みゅ画像ガチャv2で遊ぶ 🎰</a></p>
+
+    <div class="grid" id="grid">
+    <figure><img src="images/001.jpg" alt="みゅ、Codexに挑戦中。やる気だけは満点みゅ。" loading="lazy"><figcaption><span class="no">No.1</span> みゅ、Codexに挑戦中。やる気だけは満点みゅ。</figcaption></figure>
+    <figure><img src="images/002.jpg" alt="ネタが浮かんだのは1匹だけ。あとはみんな寝てるみゅ。" loading="lazy"><figcaption><span class="no">No.2</span> ネタが浮かんだのは1匹だけ。あとはみんな寝てるみゅ。</figcaption></figure>
+    <figure><img src="images/003.jpg" alt="エンドロールは全部みゅ。ほぼ自作自演みゅ。" loading="lazy"><figcaption><span class="no">No.3</span> エンドロールは全部みゅ。ほぼ自作自演みゅ。</figcaption></figure>
+    <figure><img src="images/004.jpg" alt="みゅらしさは「かわいい・ふしぎ・きらきら」みゅ。" loading="lazy"><figcaption><span class="no">No.4</span> みゅらしさは「かわいい・ふしぎ・きらきら」みゅ。</figcaption></figure>
+    <figure><img src="images/005.jpg" alt="無印文明の遺跡を発掘中。生存確認は難航してるみゅ。" loading="lazy"><figcaption><span class="no">No.5</span> 無印文明の遺跡を発掘中。生存確認は難航してるみゅ。</figcaption></figure>
+    <figure><img src="images/006.jpg" alt="みゅ以外がもてはやされる時代でも、みゅをつくるみゅ。" loading="lazy"><figcaption><span class="no">No.6</span> みゅ以外がもてはやされる時代でも、みゅをつくるみゅ。</figcaption></figure>
+    <figure><img src="images/007.jpg" alt="11/1のみゅの積み上げ。今日もえらいみゅ。" loading="lazy"><figcaption><span class="no">No.7</span> 11/1のみゅの積み上げ。今日もえらいみゅ。</figcaption></figure>
+    <figure><img src="images/008.jpg" alt="どのアカウントだったか分からなくなったみゅ……?!?" loading="lazy"><figcaption><span class="no">No.8</span> どのアカウントだったか分からなくなったみゅ……?!?</figcaption></figure>
+  </div>
+
+    <p class="back">→ <a href="index.html">TOPへもどる</a> ／ <a href="https://myu-mew.github.io/gacha-v2/" target="_blank" rel="noopener">ガチャv2を回しに行く 🎰</a></p>
+  </main>
+
+  <footer>
+    みゅのへや ― GALLERY みゅ ( ｡･ω･｡)
+  </footer>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+  <img id="lb-img" src="" alt="">
+  <p id="lb-cap"></p>
+  <p class="close">★ クリックで閉じるみゅ ★</p>
+</div>
+
+<script>
+  // 拡大表示はおまけ機能：JSが動く環境（Safari / GitHub Pages）でのみ働く。
+  // ギャラリー自体は静的HTMLなので、JSが動かなくても絵は全部見える。
+  var lb = document.getElementById("lightbox");
+  var lbImg = document.getElementById("lb-img");
+  var lbCap = document.getElementById("lb-cap");
+  document.querySelectorAll("#grid figure img").forEach(function (img) {
+    img.addEventListener("click", function () {
+      lbImg.src = img.src;
+      lbCap.textContent = img.alt;
+      lb.classList.add("open");
+    });
+  });
+  lb.addEventListener("click", function () { lb.classList.remove("open"); });
+</script>
+</body>
+</html>

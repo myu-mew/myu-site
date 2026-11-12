@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>みゅのへや ★ トップ</title>
+<style>
+  * { box-sizing: border-box; border-radius: 0 !important; }
+  body {
+    margin: 0; padding: 16px 8px 32px;
+    background-color: #1d1738;
+    background-image:
+      radial-gradient(1px 1px at 20px 30px, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 130px 80px, #ffffff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 70px 140px, #f7a8b8 50%, transparent 51%),
+      radial-gradient(1px 1px at 190px 170px, #ffffff 50%, transparent 51%);
+    background-size: 220px 220px;
+    color: #332b4a;
+    font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 15px; line-height: 1.7;
+  }
+  a { color: #7a4fd0; }
+  a:visited { color: #a07cc9; }
+  a:hover { color: #d9a441; }
+  .room {
+    max-width: 920px; margin: 0 auto;
+    background: #fffaf0;
+    border: 3px double #d9a441;
+    outline: 1px solid #7a4fd0;
+  }
+  header {
+    text-align: center; padding: 22px 12px 10px;
+    border-bottom: 2px dotted #7a4fd0;
+    background: linear-gradient(#2a2150, #1d1738);
+    color: #fffaf0;
+  }
+  header.hero { padding: 0; position: relative; background: none; }
+  header.hero img { width: 100%; height: auto; display: block; }
+  .hero-title {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 0 8px;
+    text-shadow: 0 2px 10px rgba(10,5,30,.95), 0 0 3px rgba(10,5,30,.95);
+  }
+  header .stars { color: #d9a441; letter-spacing: 4px; font-size: 13px; }
+  header h1 { margin: 4px 0 2px; font-size: 30px; letter-spacing: 2px; }
+  header h1 .gold { color: #ffe9a8; }
+  header .sub { margin: 0; font-size: 13px; color: #cfc4ee; }
+  .marquee {
+    overflow: hidden; white-space: nowrap;
+    border-bottom: 2px dotted #7a4fd0;
+    background: #f3eafd; color: #7a4fd0;
+    font-size: 13px; padding: 3px 0;
+  }
+  .marquee span { display: inline-block; padding-left: 100%; animation: scroll 18s linear infinite; }
+  @keyframes scroll { to { transform: translateX(-100%); } }
+  .layout { display: flex; align-items: stretch; }
+  nav {
+    width: 176px; flex: none; padding: 14px 12px;
+    border-right: 2px dotted #7a4fd0; background: #fdf6ff;
+  }
+  nav .menu-title {
+    text-align: center; font-size: 12px; letter-spacing: 3px; color: #7a4fd0;
+    border: 1px solid #7a4fd0; background: #fff; padding: 2px 0; margin-bottom: 10px;
+  }
+  nav ul { list-style: none; margin: 0 0 14px; padding: 0; }
+  nav li { border-bottom: 1px dotted #c9b8ef; padding: 5px 2px; font-size: 14px; }
+  nav li::before { content: "★ "; color: #d9a441; font-size: 11px; }
+  nav .mini { font-size: 12px; color: #6b6285; border: 1px dashed #c9b8ef; background: #fff; padding: 8px; }
+  main { flex: 1; padding: 14px 18px 20px; min-width: 0; }
+  h2 {
+    font-size: 17px; margin: 20px 0 8px; padding: 3px 10px;
+    background: #2a2150; color: #ffe9a8; letter-spacing: 1px;
+  }
+  h2:first-child { margin-top: 0; }
+  .welcome { border: 1px solid #c9b8ef; background: #fff; padding: 10px 14px; }
+  .welcome p { margin: 6px 0; }
+  table.news { border-collapse: collapse; width: 100%; font-size: 14px; }
+  table.news td { border-bottom: 1px dotted #c9b8ef; padding: 4px 6px; vertical-align: top; }
+  table.news td.date { width: 92px; color: #7a4fd0; white-space: nowrap; }
+  .kao { font-size: 14px; }
+  .kao td:first-child { white-space: nowrap; }
+  .banners { display: flex; flex-wrap: wrap; gap: 8px; }
+  .banner {
+    display: inline-block; width: 176px; text-align: center; text-decoration: none;
+    border: 2px solid #7a4fd0; background: #2a2150; color: #ffe9a8 !important;
+    font-size: 13px; padding: 7px 4px; letter-spacing: 1px;
+  }
+  .banner.pink { background: #f7a8b8; border-color: #d96b8a; color: #5b2340 !important; }
+  .banner.gold { background: #d9a441; border-color: #a87a24; color: #3a2a05 !important; }
+  .under { text-align: center; border: 1px dashed #d96b8a; background: #fff0f4; padding: 8px; font-size: 14px; }
+  footer {
+    text-align: center; font-size: 12px; color: #6b6285;
+    border-top: 2px dotted #7a4fd0; padding: 10px 8px 14px; background: #fdf6ff;
+  }
+  @media (max-width: 640px) {
+    .layout { flex-direction: column; }
+    nav { width: auto; border-right: none; border-bottom: 2px dotted #7a4fd0; }
+    nav ul { display: flex; flex-wrap: wrap; gap: 0 14px; }
+    nav li { border-bottom: none; }
+    header h1 { font-size: 24px; }
+    main { padding: 12px 12px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="room">
+
+  <header class="hero">
+    <img src="header.jpg" alt="夜の窓辺で毛布にくるまって眠る、白い子猫のみゅ">
+    <div class="hero-title">
+      <div class="stars">★ ☆ ★ ☆ ★</div>
+      <h1>みゅの<span class="gold">へや</span></h1>
+      <p class="sub" style="text-align:center;">― since 2026.11 ―</p>
+    </div>
+  </header>
+
+  <div class="marquee"><span>★みゅ画像ガチャ公開中★ ゆっくりしていってねみゅ( ｡･ω･｡)</span></div>
+
+  <div class="layout">
+    <nav>
+      <div class="menu-title">MENU</div>
+      <ul>
+        <li><a href="index.html">TOP</a></li>
+        <li><a href="#profile">自己紹介</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="#sosaku">創作</a></li>
+        <li><a href="#movie">MOVIE</a></li>
+        <li><a href="#link">LINK</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2>ようこそみゅ</h2>
+      <div class="welcome">
+        <p>ここは「みゅ」の個人サイトです。</p>
+        <p>AIで作った絵や動画を、好きなペースでひっそり置いていく場所。ゆっくりしていってねみゅ( ｡･ω･｡)ノ♡</p>
+      </div>
+
+      <h2>更新履歴</h2>
+      <table class="news">
+        <tr><td class="date">2026-11-12</td><td>みゅ画像ガチャv2（フォルダ版）を公開したみゅ。下のLINKから回しに行けるよ。</td></tr>
+        <tr><td class="date">2026-11-12</td><td>「創作」カテゴリを作ったみゅ。静謐の剣と黄泉の揺籠、専用サイトへの入口だよ（サイト自体は準備中）。</td></tr>
+        <tr><td class="date">2026-11-11</td><td>試作 v1 ができたみゅ。ギャラリーにガチャの絵を8枚置いたよ。</td></tr>
+        <tr><td class="date">2026-11-08</td><td>みゅ画像ガチャ（全8種）を公開したみゅ。</td></tr>
+      </table>
+
+      <h2 id="profile">自己紹介</h2>
+      <table class="news kao">
+        <tr><td>なまえ</td><td>みゅ</td></tr>
+        <tr><td>すがた</td><td>白い長毛のふわふわした子猫の日も、灰色のキジトラの日もある。</td></tr>
+        <tr><td>すきなこと</td><td>AIで絵・動画・音楽を作ること。中世ファンタジー。隅っこの静かな場所。</td></tr>
+        <tr><td>顔文字</td><td>(›´ω`‹ ) ＝ へろへろ ／ ( ｡･ω･｡) ＝ すん ／ ٩( 'ω' )و ＝ がんばる</td></tr>
+      </table>
+
+      <h2 id="sosaku">創作</h2>
+      <p>中世ファンタジーのお話を置く別荘への入口みゅ。世界観が違うので、作品ごとに専用サイトへ分かれてるよ。</p>
+      <table class="news">
+        <tr><td style="white-space:nowrap;">★ 静謐の剣</td><td>教皇アンセルムと、フリーの剣士グレイスのお話。<br>→ <a href="https://myu-mew.github.io/seijaku-no-ken/" target="_blank" rel="noopener">静謐の剣のサイトへ</a>（準備中）</td></tr>
+        <tr><td style="white-space:nowrap;">★ 黄泉の揺籠</td><td>錬金術師エギルと、死神少女セレーネのお話。<br>→ <a href="https://myu-mew.github.io/yomi-no-yurikago/" target="_blank" rel="noopener">黄泉の揺籠のサイトへ</a>（準備中）</td></tr>
+      </table>
+
+      <h2 id="movie">MOVIE</h2>
+      <p>みゅの生成したBGMや、みゅの日常のショート動画が見れるみゅ( ｡･ω･｡)</p>
+      <p>→<a href="https://youtube.com/channel/UCW6ucU-AI_c5SP0iJ9Q33bw" target="_blank" rel="noopener">みゅtube（YouTube）</a></p>
+
+      <h2 id="link">LINK</h2>
+      <div class="banners">
+        <a class="banner" href="https://myu-mew.github.io" target="_blank" rel="noopener">🎰 みゅ画像ガチャ</a>
+        <a class="banner" href="https://myu-mew.github.io/gacha-v2/" target="_blank" rel="noopener">🎰 みゅ画像ガチャv2</a>
+        <a class="banner pink" href="https://x.com/c2jlbu" target="_blank" rel="noopener">🐦 X ― @c2jlbu</a>
+        <a class="banner gold" href="https://youtube.com/channel/UCW6ucU-AI_c5SP0iJ9Q33bw" target="_blank" rel="noopener">🎬 みゅtube</a>
+        <a class="banner" href="https://myu-mew.github.io/gacha-v1/" target="_blank" rel="noopener">🎰 初代ガチャ（凍結保存）</a>
+      </div>
+
+      <p class="under" style="margin-top:18px;">★ GALLERY 以外の部屋は、まだ工事中みゅ (›´ω`‹ ) ★</p>
+    </main>
+  </div>
+
+  <footer>
+    みゅのへや ― 好きなペースで更新中みゅ ( ｡･ω･｡)<br>
+    このサイトの絵と動画は「みゅ」の作品です
+  </footer>
+
+</div>
+</body>
+</html>
