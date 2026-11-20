@@ -66,6 +66,7 @@
   nav ul { list-style: none; margin: 0 0 14px; padding: 0; }
   nav li { border-bottom: 1px dotted #c9b8ef; padding: 5px 2px; font-size: 14px; }
   nav li::before { content: "★ "; color: #d9a441; font-size: 11px; }
+  nav li.break { display: none; }
   nav .mini { font-size: 12px; color: #6b6285; border: 1px dashed #c9b8ef; background: #fff; padding: 8px; }
   main { flex: 1; padding: 14px 18px 20px; min-width: 0; }
   h2 {
@@ -110,6 +111,8 @@
     nav { width: auto; border-right: none; border-bottom: 2px dotted #7a4fd0; }
     nav ul { display: flex; flex-wrap: wrap; gap: 0 14px; }
     nav li { border-bottom: none; }
+    nav li.break { display: block; flex-basis: 100%; height: 0; padding: 0; }
+    nav li.break::before { content: ""; }
     header h1 { font-size: 24px; }
     main { padding: 12px 12px 18px; }
   }
@@ -137,6 +140,7 @@
         <li><a href="#profile">自己紹介</a></li>
         <li><a href="#youtube">YouTube</a></li>
         <li><a href="#x">X</a></li>
+        <li class="break" aria-hidden="true"></li>
         <li><a href="gallery.html">ガチャ</a></li>
         <li><a href="meigen.html">迷言集</a></li>
       </ul>
