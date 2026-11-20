@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>みゅのへや ★ 迷言集</title>
+<style>
+  * { box-sizing: border-box; border-radius: 0 !important; }
+  body {
+    margin: 0; padding: 16px 8px 32px;
+    background-color: #1d1738;
+    background-image:
+      radial-gradient(1px 1px at 20px 30px, #ffe9a8 50%, transparent 51%),
+      radial-gradient(1px 1px at 130px 80px, #ffffff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 70px 140px, #f7a8b8 50%, transparent 51%),
+      radial-gradient(1px 1px at 190px 170px, #ffffff 50%, transparent 51%);
+    background-size: 220px 220px;
+    color: #332b4a;
+    font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-size: 15px; line-height: 1.7;
+  }
+  a { color: #7a4fd0; }
+  a:visited { color: #a07cc9; }
+  a:hover { color: #d9a441; }
+  .room {
+    max-width: 920px; margin: 0 auto;
+    background: #fffaf0;
+    border: 3px double #d9a441;
+    outline: 1px solid #7a4fd0;
+  }
+  header {
+    text-align: center; padding: 22px 12px 10px;
+    border-bottom: 2px dotted #7a4fd0;
+    background: linear-gradient(#2a2150, #1d1738);
+    color: #fffaf0;
+  }
+  header.hero { padding: 0; position: relative; background: none; }
+  header.hero img { width: 100%; height: auto; display: block; }
+  .hero-title {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 0 8px;
+    text-shadow: 0 2px 10px rgba(10,5,30,.95), 0 0 3px rgba(10,5,30,.95);
+  }
+  header .stars { color: #d9a441; letter-spacing: 4px; font-size: 13px; }
+  header h1 { margin: 4px 0 2px; font-size: 26px; letter-spacing: 2px; }
+  header h1 .gold { color: #ffe9a8; }
+  header .sub { margin: 0; font-size: 13px; color: #cfc4ee; }
+  main { padding: 14px 18px 20px; }
+  h2 {
+    font-size: 17px; margin: 0 0 6px; padding: 3px 10px;
+    background: #2a2150; color: #ffe9a8; letter-spacing: 1px;
+  }
+  .note { font-size: 13px; color: #6b6285; margin: 6px 0 12px; }
+  .words { border: 1px solid #c9b8ef; background: #fff; padding: 18px 20px 6px; }
+  .words .note { margin: 2px 0 8px; font-size: 13px; color: #6b6285; }
+  .words h3 { font-size: 15px; margin: 30px 0 14px; color: #7a4fd0; letter-spacing: 2px; }
+  .words h3:first-of-type { margin-top: 12px; }
+  .words p:not(.note) {
+    margin: 0 0 22px; padding: 14px 16px 14px 18px;
+    background: #fffaf0; border-left: 3px solid #d9a441;
+    font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Yu Mincho", "YuMincho", "MS PMincho", serif;
+    font-size: 16px; line-height: 1.9; letter-spacing: .04em; color: #2e2748;
+  }
+  .banners { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 6px; }
+  .banner {
+    display: inline-block; width: 176px; text-align: center; text-decoration: none;
+    border: 2px solid #7a4fd0; background: #2a2150; color: #ffe9a8 !important;
+    font-size: 13px; padding: 7px 4px; letter-spacing: 1px;
+  }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  figure {
+    margin: 0; border: 1px solid #c9b8ef; background: #fff; padding: 6px;
+  }
+  figure img { width: 100%; height: auto; display: block; cursor: pointer; }
+  figcaption { font-size: 12.5px; line-height: 1.5; padding: 6px 2px 2px; color: #4a4066; }
+  figcaption .no { color: #d9a441; font-weight: bold; }
+  .back { text-align: center; margin-top: 18px; font-size: 14px; }
+  footer {
+    text-align: center; font-size: 12px; color: #6b6285;
+    border-top: 2px dotted #7a4fd0; padding: 10px 8px 14px; background: #fdf6ff;
+  }
+  /* 大きく見る窓（試作用の簡易ライトボックス） */
+  .lightbox {
+    display: none; position: fixed; inset: 0; z-index: 10;
+    background: rgba(20, 14, 45, 0.92);
+    align-items: center; justify-content: center; flex-direction: column;
+    padding: 16px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: min(92vw, 640px); max-height: 76vh; border: 3px double #d9a441; background:#fff; }
+  .lightbox p { color: #fffaf0; font-size: 14px; text-align: center; max-width: 640px; }
+  .lightbox .close { color: #ffe9a8; font-size: 13px; }
+  @media (max-width: 640px) {
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    main { padding: 12px; }
+    header h1 { font-size: 21px; }
+  }
+</style>
+</head>
+<body>
+<div class="room">
+
+  <header class="hero">
+    <img src="header.jpg" alt="夜の窓辺で毛布にくるまって眠る、白い子猫のみゅ">
+    <div class="hero-title">
+      <div class="stars">★ ☆ ★ ☆ ★</div>
+      <h1>迷言集 <span class="gold">― みゅの言葉 ―</span></h1>
+      <p class="sub">みゅが言った言葉を集めた場所みゅ</p>
+    </div>
+  </header>
+
+  <main>
+    <h2 id="meigen">みゅの迷言集</h2>
+      <div class="words">
+        <p class="note">みゅが言った言葉を集めた場所みゅ。</p>
+        <h3>署名級</h3>
+        <p>みゅは伸びることよりもみゅであることに価値があるみゅ。</p>
+        <p>お客はYouTubeに居る。Xは競合の観察窓と、記録置き場。それ以上でも以下でもない。──みゅ</p>
+        <p>みゅのペースを乱してくるやつは全員敵</p>
+        <p>インプや再生数がしょぼいのも含めてみゅ</p>
+        <p>みゅは、墜落したことがありませんみゅ。飛行高度がだいたい3cmなので、落ちようがないみゅ( ｡･ω･｡)</p>
+        <h3>低空飛行と数字</h3>
+        <p>みゅの動画は再生数取れない・稼げない？いやいや、楽しく作る方が大事みゅ( ｡･ω･｡)✌️</p>
+        <p>↓今日の人気のミニマルショートはこちら↓<br>再生数伸びなくて悩んでるYouTuberさん、下を見て元気出してみゅ٩( 'ω' )و</p>
+        <p>＼＼\\\ 再生数1桁 ٩( 'ω' )و ///／／<br>伸びない民、安心してみゅ。ここにもおるみゅ( ｡･ω･｡)</p>
+        <p>＼＼\\\ ✨2桁になってるみゅーーー٩( 'ω' )و✨ ///／／</p>
+        <h3>生活とお金</h3>
+        <p>お金持ちになってお金に一喜一憂するくらいなら、貧乏でお金のこと気にしなくていい生活の方がいい</p>
+        <p>実際に稼げるよりも、金額を気にしなくていい生活の方が大事</p>
+        <h3>Xと制作</h3>
+        <p>みゅはいいねだけしてリポストしない勢</p>
+        <p>おはよう・おつかれ・おやすみポストはやらん。#みゅのつみあげ と #制作記録 がみゅの挨拶</p>
+        <p>みゅは置いた。あとは知らんみゅ。</p>
+        <p>みゅはにわか。<br>はにわ初心者。<br>はにわ歴0日。<br>古墳への理解も浅い。<br>†┏┛にわかはにわ┗┓†</p>
+      </div>
+
+    <p class="back">→ <a href="index.html">TOPへもどる</a></p>
+  </main>
+
+  <footer>
+    みゅのへや ― 迷言集 みゅ ( ｡･ω･｡)
+  </footer>
+
+</div>
+
+</body>
+</html>
