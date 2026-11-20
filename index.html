@@ -80,10 +80,16 @@
   table.news td.date { width: 92px; color: #7a4fd0; white-space: nowrap; }
   .kao { font-size: 14px; }
   .kao td:first-child { white-space: nowrap; }
-  .words { border: 1px solid #c9b8ef; background: #fff; padding: 10px 14px; }
-  .words .note { margin: 2px 0 6px; font-size: 13px; color: #6b6285; }
-  .words h3 { font-size: 14px; margin: 12px 0 2px; color: #7a4fd0; }
-  .words p { margin: 3px 0; }
+  .words { border: 1px solid #c9b8ef; background: #fff; padding: 18px 20px 6px; }
+  .words .note { margin: 2px 0 8px; font-size: 13px; color: #6b6285; }
+  .words h3 { font-size: 15px; margin: 30px 0 14px; color: #7a4fd0; letter-spacing: 2px; }
+  .words h3:first-of-type { margin-top: 12px; }
+  .words p:not(.note) {
+    margin: 0 0 22px; padding: 14px 16px 14px 18px;
+    background: #fffaf0; border-left: 3px solid #d9a441;
+    font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Yu Mincho", "YuMincho", "MS PMincho", serif;
+    font-size: 16px; line-height: 1.9; letter-spacing: .04em; color: #2e2748;
+  }
   .banners { display: flex; flex-wrap: wrap; gap: 8px; }
   .banner {
     display: inline-block; width: 176px; text-align: center; text-decoration: none;
@@ -177,7 +183,7 @@
 
       <h2 id="meigen">みゅの迷言集</h2>
       <div class="words">
-        <p class="note">みゅが言った言葉を集めた場所みゅ。ここが増えるのは、みゅが「迷言集更新して」と言った時だけ。</p>
+        <p class="note">みゅが言った言葉を集めた場所みゅ。</p>
         <h3>署名級</h3>
         <p>みゅは伸びることよりもみゅであることに価値があるみゅ。</p>
         <p>お客はYouTubeに居る。Xは競合の観察窓と、記録置き場。それ以上でも以下でもない。──みゅ</p>
