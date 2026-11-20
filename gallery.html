@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>みゅのへや ★ GALLERY</title>
+<title>みゅのへや ★ ガチャ</title>
 <style>
   * { box-sizing: border-box; border-radius: 0 !important; }
   body {
@@ -52,6 +52,12 @@
     background: #2a2150; color: #ffe9a8; letter-spacing: 1px;
   }
   .note { font-size: 13px; color: #6b6285; margin: 6px 0 12px; }
+  .banners { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 6px; }
+  .banner {
+    display: inline-block; width: 176px; text-align: center; text-decoration: none;
+    border: 2px solid #7a4fd0; background: #2a2150; color: #ffe9a8 !important;
+    font-size: 13px; padding: 7px 4px; letter-spacing: 1px;
+  }
   .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
   figure {
     margin: 0; border: 1px solid #c9b8ef; background: #fff; padding: 6px;
@@ -89,14 +95,21 @@
     <img src="header.jpg" alt="夜の窓辺で毛布にくるまって眠る、白い子猫のみゅ">
     <div class="hero-title">
       <div class="stars">★ ☆ ★ ☆ ★</div>
-      <h1>GALLERY <span class="gold">― みゅの絵 ―</span></h1>
+      <h1>ガチャ <span class="gold">― みゅ画像ガチャ ―</span></h1>
       <p class="sub">絵をクリックすると大きく見れるみゅ</p>
     </div>
   </header>
 
   <main>
-    <h2>みゅ画像ガチャの絵（出てくる例）</h2>
-    <p class="note">★ この絵たちはガチャでも回せるみゅ → <a href="https://myu-mew.github.io/gacha-v2/" target="_blank" rel="noopener">みゅ画像ガチャv2で遊ぶ 🎰</a></p>
+    <h2>ガチャ</h2>
+    <p class="note">みゅ画像ガチャ、回せるみゅ( ｡･ω･｡) v1は初代の凍結保存、v2はフォルダ版みゅ。</p>
+    <div class="banners">
+      <a class="banner" href="https://myu-mew.github.io/gacha-v1/" target="_blank" rel="noopener">🎰 みゅ画像ガチャv1</a>
+      <a class="banner" href="https://myu-mew.github.io/gacha-v2/" target="_blank" rel="noopener">🎰 みゅ画像ガチャv2</a>
+    </div>
+
+    <h2 style="margin-top:22px;">ガチャの絵（出てくる例）</h2>
+    <p class="note">★ 絵をクリックすると大きく見れるみゅ</p>
 
     <div class="grid" id="grid">
     <figure><img src="images/001.jpg" alt="みゅ、Codexに挑戦中。やる気だけは満点みゅ。" loading="lazy"><figcaption><span class="no">No.1</span> みゅ、Codexに挑戦中。やる気だけは満点みゅ。</figcaption></figure>
@@ -113,7 +126,7 @@
   </main>
 
   <footer>
-    みゅのへや ― GALLERY みゅ ( ｡･ω･｡)
+    みゅのへや ― ガチャ みゅ ( ｡･ω･｡)
   </footer>
 
 </div>
